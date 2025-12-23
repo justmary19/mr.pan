@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr.Pan - Блинная в Таллине</title>
+
+  <style>
+    :root{
+      --bg:#000000;
+      --gold:#f5b52e;
+      --gold-dark:#c88a1a;
+      --text:#ffffff;
+      --muted:#cfcfcf;
+      --card:#0f0f0f;
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:20px;
+    }
+
+    /* HEADER */
+    header{
+      border-bottom:1px solid #1a1a1a;
+    }
+    .header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .header img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+    }
+    .header h1{
+      margin:0;
+      font-size:22px;
+      letter-spacing:1px;
+      color:var(--gold);
+    }
+
+    /* HERO */
+    .hero{
+      margin-top:40px;
+      text-align:center;
+    }
+    .hero h2{
+      font-size:38px;
+      color:var(--gold);
+      margin-bottom:12px;
+    }
+    .hero p{
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 26px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+      color:#000;
+      font-weight:bold;
+      text-decoration:none;
+      transition:.2s;
+    }
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    /* INFO */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:16px;
+      margin-top:40px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      border:1px solid #1f1f1f;
+    }
+    .card h3{
+      color:var(--gold);
+      margin-top:0;
+    }
+
+    /* CONTACTS */
+    .contacts{
+      margin-top:50px;
+      text-align:center;
+    }
+    .contacts a{
+      display:inline-block;
+      margin:10px;
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    /* POPUP */
+    .popup-bg{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.75);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:100;
+      padding:16px;
+    }
+    .popup{
+      background:#000;
+      border-radius:20px;
+      max-width:700px;
+      width:100%;
+      border:2px solid var(--gold);
+      position:relative;
+      overflow:hidden;
+    }
+    .popup img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .close{
+      position:absolute;
+      top:10px;
+      right:10px;
+      background:var(--gold);
+      border:none;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      cursor:pointer;
+      font-weight:bold;
+      font-size:18px;
+      line-height:38px;
+      color:#000;
+    }
+.corner-pancakes{
+  position: fixed;
+  right: -40px;
+  bottom: -40px;
+  width: 320px;
+  max-width: 60vw;
+  z-index: 10;
+  pointer-events: none; /* чтобы не мешало кликам */
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+/* Адаптация под телефон */
+@media (max-width: 768px){
+  .corner-pancakes{
+    width: 200px;
+    right: -30px;
+    bottom: -30px;
+    opacity: 0.9;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header">
+    <img src="logo.jpg" alt="Mr.Pan" />
+    <h1>MR.PAN</h1>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h2>Насладись нашими горячими блинами,<br>забирай скорее свой заказ</h2>
+    <p>Мы работаем <b>только через Bolt Food</b><br>в Таллине</p>
+
+    <a class="btn" href="https://food.bolt.eu/ru-ru/1/p/175006-mrpan" target="_blank" rel="noopener">
+      Заказать в Bolt Food
+    </a>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Горячие блины</h3>
+      <p>Сладкие и пикантные варианты</p>
+    </div>
+    <div class="card">
+      <h3>Быстро</h3>
+      <p>Заказ в пару кликов</p>
+    </div>
+    <div class="card">
+      <h3>Таллин</h3>
+      <p>Работаем по городу</p>
+    </div>
+  </section>
+
+  <section class="contacts">
+    <h2 style="color:var(--gold)">Мы в соцсетях</h2>
+    <a href="https://www.instagram.com/mr.pan._?igsh=NnU1ejZtZjUyZzFv" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@mr.pan58?_r=1&_t=ZM-92LmRxySzrk" target="_blank" rel="noopener">TikTok</a>
+  </section>
+</main>
+
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+
+  window.addEventListener('load', () => {
+    popup.style.display = 'flex';
+  });
+
+  function closePopup() {
+    popup.style.display = 'none';
+  }
+
+  // Закрытие по клику на тёмный фон
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) closePopup();
+  });
+</script>
+<img src="pancakes.png" alt="Pancakes" class="corner-pancakes">
+
+</body>
+</html>
