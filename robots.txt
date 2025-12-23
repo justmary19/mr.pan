@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justmary19.github.io/mr.pan/sitemap.xml
