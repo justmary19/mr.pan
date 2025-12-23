@@ -3,7 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr.Pan - Блинная в Таллине</title>
+
+  <!-- SEO -->
+  <title>Mr.Pan — блинная в Таллине • блины и доставка через Bolt Food</title>
+  <meta name="description" content="Mr.Pan — блинная в Таллине. Горячие сладкие и пикантные блины, вкусная еда и доставка по Таллину через Bolt Food. Заказ онлайн." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://justmary19.github.io/mr.pan/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Mr.Pan — блинная в Таллине" />
+  <meta property="og:description" content="Горячие блины, вкусная еда и доставка по Таллину через Bolt Food." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://justmary19.github.io/mr.pan/" />
+  <meta property="og:image" content="https://justmary19.github.io/mr.pan/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mr.Pan — блинная в Таллине" />
+  <meta name="twitter:description" content="Горячие блины, вкусная еда и доставка по Таллину через Bolt Food." />
+  <meta name="twitter:image" content="https://justmary19.github.io/mr.pan/og-image.jpg" />
+
+  <link rel="icon" href="/mr.pan/favicon.ico" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Mr.Pan",
+    "url": "https://justmary19.github.io/mr.pan/",
+    "servesCuisine": ["Crepes", "Pancakes", "Street Food"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tallinn",
+      "addressCountry": "EE"
+    },
+    "areaServed": "Tallinn",
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": "https://food.bolt.eu/ru-ru/1/p/175006-mrpan"
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -44,7 +84,7 @@
       height:60px;
       object-fit:contain;
     }
-    .header h1{
+    .header .brand{
       margin:0;
       font-size:22px;
       letter-spacing:1px;
@@ -56,10 +96,11 @@
       margin-top:40px;
       text-align:center;
     }
-    .hero h2{
+    .hero h1{
       font-size:38px;
       color:var(--gold);
       margin-bottom:12px;
+      line-height:1.2;
     }
     .hero p{
       font-size:16px;
@@ -94,15 +135,19 @@
       padding:20px;
       border:1px solid #1f1f1f;
     }
-    .card h3{
+    .card h2{
       color:var(--gold);
       margin-top:0;
+      font-size:20px;
     }
 
     /* CONTACTS */
     .contacts{
       margin-top:50px;
       text-align:center;
+    }
+    .contacts h2{
+      color:var(--gold);
     }
     .contacts a{
       display:inline-block;
@@ -112,66 +157,25 @@
       font-weight:bold;
     }
 
-    /* POPUP */
-    .popup-bg{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.75);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:100;
-      padding:16px;
+    .corner-pancakes{
+      position: fixed;
+      right: -40px;
+      bottom: -40px;
+      width: 320px;
+      max-width: 60vw;
+      z-index: 10;
+      pointer-events: none;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
     }
-    .popup{
-      background:#000;
-      border-radius:20px;
-      max-width:700px;
-      width:100%;
-      border:2px solid var(--gold);
-      position:relative;
-      overflow:hidden;
-    }
-    .popup img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-    .close{
-      position:absolute;
-      top:10px;
-      right:10px;
-      background:var(--gold);
-      border:none;
-      width:38px;
-      height:38px;
-      border-radius:50%;
-      cursor:pointer;
-      font-weight:bold;
-      font-size:18px;
-      line-height:38px;
-      color:#000;
-    }
-.corner-pancakes{
-  position: fixed;
-  right: -40px;
-  bottom: -40px;
-  width: 320px;
-  max-width: 60vw;
-  z-index: 10;
-  pointer-events: none; /* чтобы не мешало кликам */
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-}
 
-/* Адаптация под телефон */
-@media (max-width: 768px){
-  .corner-pancakes{
-    width: 200px;
-    right: -30px;
-    bottom: -30px;
-    opacity: 0.9;
-  }
-}
+    @media (max-width: 768px){
+      .corner-pancakes{
+        width: 200px;
+        right: -30px;
+        bottom: -30px;
+        opacity: 0.9;
+      }
+    }
   </style>
 </head>
 
@@ -179,62 +183,47 @@
 
 <header>
   <div class="container header">
-    <img src="logo.jpg" alt="Mr.Pan" />
-    <h1>MR.PAN</h1>
+    <img src="logo.jpg" alt="Логотип Mr.Pan — блинная в Таллине" />
+    <p class="brand">MR.PAN</p>
   </div>
 </header>
 
 <main class="container">
   <section class="hero">
-    <h2>Насладись нашими горячими блинами,<br>забирай скорее свой заказ</h2>
-    <p>Мы работаем <b>только через Bolt Food</b><br>в Таллине</p>
+    <h1>Mr.Pan — горячие блины в Таллине</h1>
+    <p>Сладкие и пикантные блины, вкусная еда и доставка по Таллину.<br>
+      Мы работаем <b>только через Bolt Food</b>.
+    </p>
 
     <a class="btn" href="https://food.bolt.eu/ru-ru/1/p/175006-mrpan" target="_blank" rel="noopener">
       Заказать в Bolt Food
     </a>
   </section>
 
-  <section class="cards">
+  <section class="cards" aria-label="Преимущества">
     <div class="card">
-      <h3>Горячие блины</h3>
+      <h2>Горячие блины</h2>
       <p>Сладкие и пикантные варианты</p>
     </div>
     <div class="card">
-      <h3>Быстро</h3>
+      <h2>Быстро</h2>
       <p>Заказ в пару кликов</p>
     </div>
     <div class="card">
-      <h3>Таллин</h3>
-      <p>Работаем по городу</p>
+      <h2>Доставка по Таллину</h2>
+      <p>Работаем по городу Tallinn</p>
     </div>
   </section>
 
   <section class="contacts">
-    <h2 style="color:var(--gold)">Мы в соцсетях</h2>
+    <h2>Мы в соцсетях</h2>
     <a href="https://www.instagram.com/mr.pan._?igsh=NnU1ejZtZjUyZzFv" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.tiktok.com/@mr.pan58?_r=1&_t=ZM-92LmRxySzrk" target="_blank" rel="noopener">TikTok</a>
   </section>
 </main>
 
-</div>
-
-<script>
-  const popup = document.getElementById('popup');
-
-  window.addEventListener('load', () => {
-    popup.style.display = 'flex';
-  });
-
-  function closePopup() {
-    popup.style.display = 'none';
-  }
-
-  // Закрытие по клику на тёмный фон
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) closePopup();
-  });
-</script>
-<img src="pancakes.png" alt="Pancakes" class="corner-pancakes">
+<!-- Оптимизация изображения -->
+<img src="pancakes.png" alt="Блины Mr.Pan" class="corner-pancakes" loading="lazy">
 
 </body>
 </html>
